@@ -82,7 +82,8 @@ escriboTras2Segundos('los segundos pasados son: ', function () {
     // tiempo de espera
     var miliSeconds = 3000;
     // variable hh/mm/ss
-    var actualDates = diffHours + ' horas ' + diffMinutes + ' minutos y ' + (diffSeconds + miliSeconds / 1000) + ' segundos.';
+    var actualDates = diffHours + ' horas ' + diffMinutes + ' minutos y '
+        + (diffSeconds + miliSeconds / 1000) + ' segundos.';
     // mostrando segundos transcurridos
     console.log(diffSeconds2 + ' segundos \n');
     // aviso cerrando bucle
