@@ -2,6 +2,7 @@
 
 # archivos webStorm
 *.idea/
+*./
 
 ### Node template
 # Logs
