@@ -14,11 +14,9 @@ function add(a, b) {
         }
     } else {
         if (arguments.length === 0) {
-            return function (min, max) {
-                min = Math.round(Math.random() * 100);
-                max = Math.round(Math.random() * 1000);
-                a = min;
-                b = max;
+            return function (a, b) {
+                a = Math.round(Math.random() * 100);
+                b = Math.round(Math.random() * 1000);
                 return a + b;
             }
         }
