@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+
+<% include incluida.ejs %>
+
+<h4> <%- listaCursos %></h4>
+
+<h2>el segundo actual es <%= par %></h2>
+
+<% if (par === 'par'){ %>
+<% listaPar %>
+<% listaPar.forEach(function (element) { %>
+<p><%= element %></p>
+<% }) %>
+<% }else{ %>
+<% listaImpar} %>
+<% listaImpar.forEach(function (element) { %>
+<p><%= element %></p>
+<% }) %>
+</body>
+</html>
