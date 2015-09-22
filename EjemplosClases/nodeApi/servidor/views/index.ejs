@@ -1,26 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
 </head>
 <body>
+<div>
+    <ul id="navi">
+        <li><a href="http://localhost:3000/">index</a></li>
+        <li><a href="http://localhost:3000/users/">users</a></li>
+    </ul>
+</div></br>
+<h1> <%= title %></h1>
 
-<% include incluida.ejs %>
-
+<!--//<% include incluida.ejs %>-->
 <h4> <%- listaCursos %></h4>
-
-<h2>el segundo actual es <%= par %></h2>
 
 <% if (par === 'par'){ %>
 <% listaPar %>
+<h2>El segundo actual es <%= par %> muestro los cursos pares:</h2>
 <% listaPar.forEach(function (element) { %>
-<p><%= element %></p>
+<p><a href="http://keepcoding.io/es/"> <%= element %> </a></p>
 <% }) %>
 <% }else{ %>
-<% listaImpar} %>
+<% if (impar === 'impar'){ %>
+<% listaImpar %>
+<h2>El segundo actual es <%= impar %> muestro los cursos impares:</h2>
 <% listaImpar.forEach(function (element) { %>
-<p><%= element %></p>
-<% }) %>
+
+<p><a href="http://keepcoding.io/es/"> <%= element %> </a></p>
+<% });}} %>
+
+
 </body>
 </html>

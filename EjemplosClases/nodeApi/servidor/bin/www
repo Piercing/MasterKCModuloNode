@@ -2,7 +2,7 @@
 
 /**
  * Module dependencies.
- * ********************* AQUÍ ES DONDE ARRANCA LA APLICACIÓN *********************
+ * ******** AQUÍ ES DONDE REQUERIMOS NUESTRA APLICACIÓN, NUESTRA 'APP'Y ARARANCARLA POR EL PUERTO QUE LE DIGAMOS O ENCUENTRE ********
  */
 
 var app = require('../app');
@@ -13,7 +13,12 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
+    // Buscamos la variable de entorno llamada PORT o en su defecto el puerto 3000
 var port = normalizePort(process.env.PORT || '3000');
+
+// le decimos a 'app' que utilice 'port' para la conexión
+// podemos cambiar esta variable de entorno desde consola con
+// DEBUG=servidor:* PORT=4000 nodemon ./bin/www, o en el puerto que le digamos.
 app.set('port', port);
 
 /**
@@ -87,7 +92,18 @@ function onListening() {
     var bind = typeof addr === 'string'
         ? 'pipe ' + addr
         : 'port ' + addr.port;
-    debug('Listening on ' + bind + ' entorno:' + app.get('env'));
+    // 'debug', escribe en consola cuando estamos en modo debug para hacer log en consola.
+    // cuando en consola escriba "DEBUG=servidor:server NODE_ENV=production nodemon ./bin/www"
+    // voy a a establecer que la variable de entorno 'NODE_ENV' sea igual a cuando trabajo en producción
+    // ('production'), ya que por defecto NODE arranca en modo desarrollo ('development'); con esto consigo
+    // añadir los archivos que me interesen, bien a la rama de desarrollo o a la rama de producción.
+    // con 'app.get('env') obtengo lo que le pase a la variable de entorno 'NODE_ENV' por consola para establecer esa rama.
+    // Podemos comprobarlo en 'app.js' como lo establece por defecto --> "app.use(logger('dev'));"
+    // Para los errores y su debug por consola tambieén podemos ver como lo establece en 'app.js'--> "if (app.get('env') === 'development')"
+    // con esto evitamos que al definir nuestro entorno en producción al intentar acceder un malintencionado a través de la web, evitar
+    // darle la traza, cosa que en development si nos puede interesar ya que trabajamos nosotros y no tienen acceso otros.
+    debug('Listening on ' + bind + ' entorno: ' + app.get('env'));
 }
+
 
 

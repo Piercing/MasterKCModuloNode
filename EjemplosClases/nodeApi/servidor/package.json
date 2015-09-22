@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    //añadimos esta variable de entorno que nos arrancará al iniciar 'app'
+    //y arrancará por defecto nodemon con las variables de entorno que le pasemos
     "start": "DEBUG=servidor PORT=3000 nodemon ./bin/www"
   },
   "dependencies": {

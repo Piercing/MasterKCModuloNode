@@ -1,8 +1,74 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: #322817;
+    /*background-image: url("//star_wars.gif");*/
 }
 
 a {
-  color: #00B7FF;
+    color: lightgray;
+    border-bottom: 1px dotted #6c6c6c;
+    text-decoration: none;
 }
+
+a:link {
+    text-decoration: none
+}
+
+a:active {
+    text-decoration: none
+}
+
+a:visited {
+    text-decoration: none
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+h1 {
+    color: yellowgreen;
+
+}
+
+h2 {
+    color: greenyellow;
+}
+
+li {
+    color: lightgray;
+}
+
+#navi {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navi li {
+    margin: 2px;
+    padding: 0;
+    float: left;
+}
+
+#navi li a {
+    display: block;
+    width: 100px;
+    padding: 4px 0;
+    text-decoration: none;
+    text-align: center;
+    font-size: 11px;
+    color: #FFFFFF;
+    background-color: #323232;
+    border-left: 10px solid #666666;
+}
+
+/*//Ahora vamos con el hover:*/
+#navi li a:hover {
+    color: #99CC00;
+    background-color: #666666;
+    border-left-color: #99CC00;
+}
+
+
